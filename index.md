@@ -1,25 +1,18 @@
 ---
-title: Online Hosted Instructions
+title: Инструкции в Интернете
 permalink: index.html
 layout: home
 ---
 
-# Content Directory
+# Каталог содержимого
 
-Hyperlinks to each of the lab exercises and demos are listed below.
+Гиперссылки на каждое пошаговое руководство. Инструкторы могут использовать пошаговое руководство в качестве демонстрации во время лабораторного занятия учащихся. 
 
-## Labs
+## Пошаговые руководства
 
-{% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/Labs'" %}
-| Module | Lab |
+{% assign wts = site.pages | where_exp:"page", "page.url contains '/Instructions/Walkthroughs'" %}
+| Модуль | Пошаговое руководство |
 | --- | --- | 
-{% for activity in labs  %}| {{ activity.lab.module }} | [{{ activity.lab.title }}{% if activity.lab.type %} - {{ activity.lab.type }}{% endif %}]({{ site.github.url }}{{ activity.url }}) |
+{% for activity in wts %}| {{ activity.wts.module }} | [{{ activity.wts.title }}{% if activity.wts.type %} - {{ activity.wts.type }}{% endif %}]({{ site.github.url }}{{ activity.url }}) |
 {% endfor %}
 
-## Demos
-
-{% assign demos = site.pages | where_exp:"page", "page.url contains '/Instructions/Demos'" %}
-| Module | Demo |
-| --- | --- | 
-{% for activity in demos  %}| {{ activity.demo.module }} | [{{ activity.demo.title }}]({{ site.github.url }}{{ activity.url }}) |
-{% endfor %}
